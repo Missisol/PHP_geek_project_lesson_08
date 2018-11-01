@@ -17,10 +17,19 @@ function routeIndex() {
   $catIdobj = getItem("select id from category where `name` = '{$cat}'");
   $catId = $catIdobj['id'];
 
-  $sql = "insert into `product` (`name`, `description`, `price`, `quantity`, `category_id`, `img`, `img_min`) values ('{$name}', '{$des}', '{$price}', '{$quantity}', '{$catId}', '{$img}', '{$imgmin}')";
-  execute($sql);
+  if ($catId == null) {
+    $message = 'Такой категории в базе не существут';
+  } else {
+    $sql = "insert into `product` (`name`, `description`, `price`, `quantity`, `category_id`, `img`, `img_min`) values ('{$name}', '{$des}', '{$price}', '{$quantity}', '{$catId}', '{$img}', '{$imgmin}')";
+    execute($sql);
+    $message = "";
+    unset($_POST);
+  }
 
-  echo render('admin/adminproducts');
+
+  echo render('admin/adminproducts', [
+    'message' => $message,
+  ]);
 }
 
 route();

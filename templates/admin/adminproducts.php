@@ -35,6 +35,7 @@
         <div class="col-sm-6">
             <label for="exampleInputEmail1">Категория товара</label>
             <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Категория товара">
+            <div class="small"><?= $message ?></div>
         </div>
     </div>
 
