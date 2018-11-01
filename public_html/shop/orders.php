@@ -39,7 +39,7 @@ function routeOrderadmin()
     ];
   }
 
-  echo render('shop/adminorders', [
+  echo render('admin/adminorders', [
     'userOrders' => $userOrders,
   ]);
 }

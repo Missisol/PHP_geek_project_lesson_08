@@ -7,6 +7,7 @@ $items = [
     ['label' => 'Каталог', 'url' => '/shop/category.php'],
     ['label' => 'Корзина', 'url' => '/shop/cart.php'],
     ['label' => 'Заказы', 'url' => '/shop/orders.php', 'role' => '@'],
+    ['label' => 'Управление товарами', 'url' => '/admin.php', 'role' => 'admin'],
     ['label' => 'Вход', 'url' => '/user.php', 'role' => '?'],
     ['label' => 'Личный кабинет', 'url' => '/user.php', 'role' => '@'],
     ['label' => 'Выход', 'url' => '/user.php?action=logout', 'role' => '@'],

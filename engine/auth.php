@@ -21,6 +21,7 @@ function isLoggedUser()
 function userHasRole(string $role) {
     if ($role == '?') return !isLoggedUser(); // гость
     if ($role == '@') return isLoggedUser(); // авторизован
+    if ($role == 'admin') return isAdmin(); // авторизован
 
     return false;
 }
